@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+String? uid = FirebaseAuth.instance.currentUser?.uid;
 
 const inputDecoration = InputDecoration(
   border: OutlineInputBorder(),

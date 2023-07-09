@@ -1,6 +1,7 @@
-import 'package:chat_app/helper/helper_functions.dart';
 import 'package:chat_app/models/Landing_Page_Module/landing_Screen.dart';
 import 'package:chat_app/models/Landing_Page_Module/landing_state.dart';
+import 'package:chat_app/models/home_module/chat%20module/chat_screen.dart';
+import 'package:chat_app/models/home_module/chat%20module/chat_state.dart';
 import 'package:chat_app/models/home_module/home_page.dart';
 import 'package:chat_app/models/home_module/home_state.dart';
 import 'package:chat_app/models/login_model/login_screen.dart';
@@ -65,8 +66,12 @@ class MyApp extends StatelessWidget {
             ),
         '/homePage': (context) => ChangeNotifierProvider(
               create: (_) => HomeState(),
-              child: HomePage(),
+              child: const HomePage(),
             ),
+        '/chatScreen': (context) => ChangeNotifierProvider(
+              create: (_) => ChatState(context),
+              child:  ChatScreen(),
+            )
       },
     );
   }

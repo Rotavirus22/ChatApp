@@ -1,4 +1,5 @@
 import 'package:chat_app/common/constants.dart';
+import 'package:chat_app/main.dart';
 import 'package:chat_app/mmodels/user_model.dart';
 import 'package:chat_app/models/home_module/home_state.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -41,7 +42,7 @@ class _SearchScreenState extends State<SearchScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
               child: TextField(
-                onChanged:  homeState.searchUser,
+                onChanged: homeState.searchUser,
                 decoration: searchDecoration,
               ),
             ),
@@ -82,9 +83,15 @@ class _SearchScreenState extends State<SearchScreen> {
                       return ListTile(
                         title: Text(users['fullName'] ?? 'unknown'),
                         subtitle: Text(users['email'] ?? ''),
+                        onTap: () {
+                          navigatorKey.currentState!
+                              .pushNamed('/chatScreen', arguments: {
+                                'userId':users['uid'],
+                                'name': users['fullName'],
+                              });
+                        },
                       );
-                    }
-                    else{
+                    } else {
                       return ListTile(
                         title: Text('unknown'),
                         subtitle: Text(''),
