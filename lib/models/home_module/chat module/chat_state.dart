@@ -1,4 +1,3 @@
-import 'package:chat_app/common/constants.dart';
 import 'package:chat_app/mmodels/message_model.dart';
 import 'package:chat_app/mmodels/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
