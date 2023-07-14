@@ -13,7 +13,7 @@ class SplashState extends ChangeNotifier {
     var accessTkn = localStorage.read("accessToken");
     if (accessTkn == null) {
       navigatorKey.currentState!
-          .pushNamedAndRemoveUntil('/loginScreen', (route) => false);
+          .pushNamedAndRemoveUntil('/landingScreen', (route) => false);
     }
     if (accessTkn != null) {
       navigatorKey.currentState!

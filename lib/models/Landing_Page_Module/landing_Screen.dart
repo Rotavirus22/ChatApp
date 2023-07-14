@@ -11,36 +11,35 @@ class LandingScreen extends StatelessWidget {
         body: Container(
           child: Align(
             alignment: Alignment.bottomCenter,
-            child: Row(
-              children: [
+            child: Row(children: [
               Expanded(
                 child: MaterialButton(
                   height: 60,
                   onPressed: () {
-                    navigatorKey.currentState!.pushNamed('registerScreen');
+                    navigatorKey.currentState!.pushNamed('/registerScreen');
                   },
                   color: Colors.blue,
                   child: Text(
-                      'Register',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                    'Register',
+                    style: TextStyle(
+                      color: Colors.white,
                     ),
+                  ),
                 ),
               ),
-               Expanded(
+              Expanded(
                 child: MaterialButton(
                   height: 60,
                   onPressed: () {
-                    navigatorKey.currentState!.pushNamed('loginScreen');
+                    navigatorKey.currentState!.pushNamed('/loginScreen');
                   },
                   color: Colors.blue,
                   child: Text(
-                      'Log in',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                    'Log in',
+                    style: TextStyle(
+                      color: Colors.white,
                     ),
+                  ),
                 ),
               ),
             ]),
